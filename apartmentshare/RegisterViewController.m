@@ -23,7 +23,9 @@
 {
     [super viewDidLoad];
     
+    
     id<ADVTheme> theme=[ADVThemeManager sharedTheme];
+    //table view size is not coming out right. fix this later!
     self.signupTableView =[[UITableView alloc]initWithFrame:CGRectMake(16, 100, 294, 110) style:UITableViewStyleGrouped];
     
     [self.signupTableView setScrollEnabled:NO];
