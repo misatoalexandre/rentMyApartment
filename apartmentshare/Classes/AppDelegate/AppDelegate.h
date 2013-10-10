@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-
 @class SMClient;
 @class SMCoreDataStore;
 

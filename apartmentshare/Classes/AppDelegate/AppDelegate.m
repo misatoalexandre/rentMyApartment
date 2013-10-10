@@ -7,34 +7,33 @@
 //
 
 #import "AppDelegate.h"
-#import "ADVTheme.h"
 #import "StackMob.h"
+#import "ADVTheme.h"
 
-#define PUBLIC_KEY @"YOUR_PUBLIC_KEY"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
     [ADVThemeManager customizeAppAppearance];
     
-    self.client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:PUBLIC_KEY];
+    self.client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:@"369fe85b-9505-4bf3-acec-84eb10c7c037"];
     self.coreDataStore = [self.client coreDataStoreWithManagedObjectModel:self.managedObjectModel];
     
     return YES;
 }
 
-- (NSManagedObjectModel *)managedObjectModel
+- (NSManagedObjectModel *) managedObjectModel
 {
-    if (_managedObjectModel != nil) {
+    if(_managedObjectModel != nil) {
         return _managedObjectModel;
     }
+    
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"ApartmentModel" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    
     return _managedObjectModel;
 }
-
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
